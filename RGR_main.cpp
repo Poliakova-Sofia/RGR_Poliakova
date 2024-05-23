@@ -1,4 +1,3 @@
-#include <iostream>
 #include <string>
 #include <sstream>
 #include <cmath>
@@ -157,14 +156,16 @@ void task3(){
 }
 // converting decimal numbers to septal
 string DecTo7(int D) {
+   if (D <= 0) {
+        cout << "Number must be higher than 0!" << endl;
+        return "";
+    }
+
     string result = "";
-    if (D > 0) {
+    while (D > 0) {
         int remainder = D % 7;
         result = to_string(remainder) + result;
         D /= 7;
-    }
-    else {
-        cout << "number must be higher than 0! " << endl;
     }
     return result;
 }
@@ -181,10 +182,10 @@ void task4(){
     // translation of the result into a dozen system for verification
     int decimalSum = binaryToDecimal(binarySum);
     // output of results
-    cout << "Перше число (у двійковій системі): " << binaryNum1 << endl;
-    cout << "Друге число (у двійковій системі): " << binaryNum2 << endl;
-    cout << "Результат додавання (у двійковій системі): " << binarySum << endl;
-    cout << "Результат додавання (у десятковій системі): " << decimalSum << endl;
+    cout << " First number (in binary): " << binaryNum1 << endl;
+    cout << " Second number (in binary): " << binaryNum2 << endl;
+    cout << " Addition result (in binary system): " << binarySum << endl;
+    cout << " Addition result (in the decimal system): " << decimalSum << endl;
 
     return;
 }
